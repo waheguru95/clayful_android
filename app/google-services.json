@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "151798519755",
+    "project_id": "clayful-app",
+    "storage_bucket": "clayful-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151798519755:android:48439e2a12a4fa8453c84e",
+        "android_client_info": {
+          "package_name": "com.health.clayful"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151798519755-b2psunv92m65j9rroeqclnqjvs23os21.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.health.clayful",
+            "certificate_hash": "a49961d5c2010c151d42aae8073537cd2a95e674"
+          }
+        },
+        {
+          "client_id": "151798519755-u8rjj5em612tkq2v1aq3d2ov56fnfhag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL1So8Rib1Nuey5usIvmqGpD6PEjnb1p0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151798519755-u8rjj5em612tkq2v1aq3d2ov56fnfhag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

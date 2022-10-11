@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.health.clayful.viewModel.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loginLayoutParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/AppNameTextStyleTablet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/welcome_back"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/mulish_regular"
+                android:gravity="center"
+                android:visibility="gone"
+                android:lineSpacingExtra="7sp"
+                android:text="Login with the account you created at school"
+                android:textColor="@color/app_bg_color"
+                android:textSize="@dimen/_9sdp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/TextFieldStyleTablet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:text="@string/email_address"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/emailEt"
+                style="@style/AppEditTextStyleTablet"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="@={model.userEmail}"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/emailFieldCantBeEmpty"
+                style="@style/ErrorFieldStyleTablet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/empty_email_field"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/emailEt"
+                app:layout_constraintStart_toStartOf="@+id/emailEt"
+                app:layout_constraintTop_toBottomOf="@+id/emailEt" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/TextFieldStyleTablet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="@string/password"
+                app:layout_constraintStart_toStartOf="@+id/emailEt"
+                app:layout_constraintTop_toTopOf="@+id/emailFieldCantBeEmpty" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passwordEt"
+                style="@style/AppEditTextStyleTablet"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="@={model.userPassword}"
+                app:layout_constraintEnd_toEndOf="@+id/resetPassword"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/passwordFieldCantBeEmpty"
+                style="@style/ErrorFieldStyleTablet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/empty_password_field"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEt"
+                app:layout_constraintStart_toStartOf="@+id/passwordEt"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEt" />
+
+            <TextView
+                android:id="@+id/resetPassword"
+                style="@style/ForgotPasswordTextStyleTablet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:onClick="@{(v)-> model.openForgotPassword()}"
+                android:text="@string/reset_my_password"
+                app:layout_constraintEnd_toEndOf="@+id/emailEt"
+                app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/loginBtn"
+                style="@style/LoginButtonStyleTablet"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:onClick="@{(v)-> model.callLogin()}"
+                android:text="@string/login"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:backgroundTint="@color/app_bg_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordFieldCantBeEmpty" />
+
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/loginProgressBtn"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:visibility="gone"
+                style="@style/SpinKitView.FadingCircle"
+                app:SpinKit_Color="@color/white"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/loginBtn"
+                app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+                app:layout_constraintTop_toTopOf="@+id/loginBtn" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_145sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:src="@drawable/login_bg_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/passwordEt"
+                app:layout_constraintStart_toStartOf="@+id/passwordEt"
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                style="@style/RightGuideLineStyle"
+                android:orientation="vertical"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                style="@style/LeftGuideLineStyle"
+                android:orientation="vertical"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
