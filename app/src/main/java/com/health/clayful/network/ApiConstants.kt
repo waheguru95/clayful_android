@@ -82,7 +82,7 @@ object ApiConstants {
             val requestBuilder = original.newBuilder()
                 .addHeader("Accept", "application/json")
                 .addHeader("Content-Type", "application/json")
-                //.addHeader("X-APP-ID","app_${context?.resources?.getString(R.string.app_id)}")
+                .addHeader("X-APP-ID","app_${context?.resources?.getString(R.string.app_id)}")
                 .addHeader("Origin","${context?.resources?.getString(R.string.app_origin)}")
 
             /*  .addHeader("deviceType", "Android")
