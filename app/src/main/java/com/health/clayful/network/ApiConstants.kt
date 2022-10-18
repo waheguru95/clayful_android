@@ -1,6 +1,5 @@
 package com.health.clayful.network
 
-import android.content.Context
 import androidx.viewbinding.ViewBinding
 import com.google.gson.GsonBuilder
 import com.health.clayful.R
@@ -11,7 +10,6 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-
 
 object ApiConstants {
 
@@ -82,7 +80,7 @@ object ApiConstants {
             val requestBuilder = original.newBuilder()
                 .addHeader("Accept", "application/json")
                 .addHeader("Content-Type", "application/json")
-                .addHeader("X-APP-ID","app_${context?.resources?.getString(R.string.app_id)}")
+                .addHeader("X-APP-ID","app_cl6n1dm04001f0znngi290pyo")
                 .addHeader("Origin","${context?.resources?.getString(R.string.app_origin)}")
 
             /*  .addHeader("deviceType", "Android")
