@@ -74,7 +74,13 @@ class AuthViewModel(val loginActivity: LoginActivity<ViewBinding>) : ViewModel()
     }
 
     fun identifyPerson(userId: String?) {
-        CustomerIO.instance().identify(userId.toString())
+        if(loginActivity.builder != null) {
+            CustomerIO.instance().identify(userId.toString())
+        }
+        else {
+            loginActivity.initializeCustomerIO()
+            CustomerIO.instance().identify(userId.toString())
+        }
     }
 
     private fun callUserLogin() {

@@ -24,7 +24,8 @@ object ApiConstants {
 
     private const val BASE_URL = "https://client.memberstack.com/"
     private const val CUSTOMER_IO_BASE_URL = "https://track.customer.io/api/v1/"
-    private const val JWT_TOKEN_URL = "https://sleepy-shelf-99425.herokuapp.com/"
+    //private const val JWT_TOKEN_URL = "https://sleepy-shelf-99425.herokuapp.com/"
+    private const val JWT_TOKEN_URL = "http://34.27.91.26:8000/"
 
     // Create Service
     private val service = getClient(BASE_URL, false).create(ApiServices::class.java)

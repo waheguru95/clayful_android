@@ -15,8 +15,8 @@ android {
         applicationId "com.health.clayful"
         minSdk 21
         targetSdk 32
-        versionCode 4
-        versionName "1.2"
+        versionCode 5
+        versionName "1.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -128,4 +128,19 @@ Customer.io
 email = infothreeg@gmail.com
 password = Puneet@6644
 
-* */
+
+Google
+email = aditi.3ginfo@gmail.com
+password = Aditi@123
+
+
+Zendesk login link
+https://clayful.zendesk.com/hc/en-us/restricted?auth_action=signin&return_to=https%3A%2F%2Fclayful.zendesk.com%2Fhc%2Fen-us
+
+
+Zendesk login  Credential
+email = infothreeg@gmail.com
+password = Puneet@6644
+
+
+*/

@@ -49,6 +49,7 @@ abstract class BaseActivity<V : ViewBinding> : AppCompatActivity(), CustomerIOUr
     private lateinit var loaderDialog : Dialog
     private lateinit var alertDialogLoading : AlertDialog
     private lateinit var loaderDialogView : View
+    var builder : CustomerIO.Builder ?= null
 
     lateinit var prefData : PrefData
     var orientation = 0
@@ -260,13 +261,13 @@ abstract class BaseActivity<V : ViewBinding> : AppCompatActivity(), CustomerIOUr
     }
 
     fun initializeCustomerIO() {
-        val builder = CustomerIO.Builder(
+        builder = CustomerIO.Builder(
             siteId = getString(R.string.customer_io_site_id),
             apiKey = getString(R.string.customer_io_api_key),
             appContext = application
         )
-        builder.setCustomerIOUrlHandler(this)
-        builder.build()
+        builder?.setCustomerIOUrlHandler(this)
+        builder?.build()
     }
 
     fun View.hideView() {

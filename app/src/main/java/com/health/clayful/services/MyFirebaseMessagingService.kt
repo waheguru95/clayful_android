@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -30,7 +29,6 @@ import zendesk.messaging.android.push.PushResponsibility
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
     private val LOG_TAG = "DefaultMessagingService"
-    private val REQUEST_CODE = 0
     private var notification: Notification ?= null
     private var notificationId = 0
 
